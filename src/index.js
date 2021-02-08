@@ -1,15 +1,14 @@
-// express 
 const express = require("express");
 const app = express();
 
 // Settings for Server
 app.set("port", process.env.PORT || 3000);
 
-// Starting Mongo
+// Starting MongoDB
 const { MongoClient } = require("mongodb");
 const { ObjectID } = require("mongodb");
 
-// Middleware
+// Middlewares
 app.use(express.json());
 
 // Mongo connect function
