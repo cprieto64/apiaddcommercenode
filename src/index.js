@@ -19,8 +19,8 @@ async function connect() {
       { useUnifiedTopology: true },
       { useNewUrlParser: true }
     );
-    const db = client.db("nodejs-restapi");
-    return db;
+    const db = client.db("nodejs-restapi");   
+    return db;        
   } catch (e) {
     console.log(e);
   }
@@ -30,7 +30,7 @@ async function connect() {
 app.get("/comercios", async (req, res) => {
   const db = await connect();
   const result = await db.collection("comercio").find({}).toArray();  
-  res.json(result);
+  res.json(result);  
 });
 
 // addcomercio
@@ -52,7 +52,6 @@ app.post("/addcomercio", async (req, res) => {
     credencial,
   } = req.body;
 
-  if (codigoUnico)
 
   if (
     !codigoUnico || typeof codigoUnico === 'undefined' || codigoUnico === '' ||    
