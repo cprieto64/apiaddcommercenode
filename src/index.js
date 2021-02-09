@@ -23,6 +23,8 @@ async function connect() {
     return db;        
   } catch (e) {
     console.log(e);
+  } finally {
+   console.log('Estoy en finally');
   }
 }
 
